@@ -64,11 +64,11 @@ async function handleTick(sender, sendResponse) {
       secondsToday++;
       lastTickTime = now;
 
-      // Check if a new 5-minute threshold (300 seconds) is reached
-      const currentFiveMinInterval = Math.floor(secondsToday / 300);
-      if (currentFiveMinInterval > lastWarningPlayedMinute && secondsToday >= 300) {
+      // Check if a new 1-minute threshold (60 seconds) is reached
+      const currentOneMinInterval = Math.floor(secondsToday / 60);
+      if (currentOneMinInterval > lastWarningPlayedMinute && secondsToday >= 60) {
         playSound = true;
-        lastWarningPlayedMinute = currentFiveMinInterval;
+        lastWarningPlayedMinute = currentOneMinInterval;
       }
     }
 
