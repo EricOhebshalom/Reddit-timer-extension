@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit Daily Time Tracker",
+  "version": "1.0.0",
+  "description": "Tracks your daily time spent on old.reddit.com, showing a beautiful floating timer in the top-left corner. Resets at midnight.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://old.reddit.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "idle"
+  ],
+  "host_permissions": [
+    "*://old.reddit.com/*"
+  ]
+}
